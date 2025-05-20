@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takura M Hove | Data & Security Specialist</title>
+    <meta name="description" content="Takura M Hove - Data & Security Specialist portfolio: data analytics, cybersecurity, and software development.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #4D44DB;
+            --accent: #FF6584;
+            --accent2: #20B2AA;
+            --text: #2D3748;
+            --light: #F8FAFC;
+            --gray: #718096;
+            --dark: #1A202C;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        /* Particle.js container */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: var(--light);
+            z-index: -1;
+        }
+        
+        header {
+            text-align: center;
+            padding: 100px 20px 60px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--accent2));
+            z-index: -1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s both;
+        }
+        
+        .tagline {
+            font-size: 1.4rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+            animation: fadeIn 1s 0.3s both;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: rgba(255,255,255,0.9);
+            box-shadow: 0 0 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 8px;
+            margin-top: 50px;
+            display: inline-block;
+            color: var(--secondary);
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1s; }
+        .section:nth-child(6) { animation-delay: 1.2s; }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .skill {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(108, 99, 255, 0.1);
+        }
+        
+        .skill:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(255, 101, 132, 0.2);
+        }
+        
+        .project {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project h3 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+        
+        .project h3 i {
+            margin-right: 15px;
+            font-size: 1.5em;
+        }
+        
+        footer {
+            text-align: center;
+            margin: 80px 0 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+            color: var(--gray);
+        }
+        
+        .contact-icons {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .contact-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(108, 99, 255, 0.2);
+        }
+        
+        .contact-icons a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            text-decoration: none;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                margin-bottom: 40px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Takura M Hove</h1>
+            <p class="tagline">"Turning data into decisions and building secure digital experiences"</p>
+        </header>
+
+        <section class="section">
+            <h2><i class="fas fa-user-tie"></i> Professional Profile</h2>
+            <p>I'm a computer science student specializing in data analytics and cybersecurity solutions. With expertise in multiple programming languages including Python, JavaScript, and C#, I develop systems that transform raw information into valuable business intelligence while maintaining robust security protocols.</p>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <p>Currently completing my Bachelor's degree in Computer Science at Midlands State University, where I'm gaining advanced knowledge in algorithmic design, software development methodologies, and information protection strategies.</p>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-star"></i> Core Competencies</h2>
+            <ul>
+                <li><i class="fas fa-chart-line" style="color: var(--accent);"></i> Data interpretation and visual presentation</li>
+                <li><i class="fas fa-shield-alt" style="color: var(--primary);"></i> Cybersecurity framework implementation</li>
+                <li><i class="fas fa-code" style="color: var(--accent2);"></i> Full-stack application development</li>
+                <li><i class="fas fa-mobile-alt" style="color: var(--primary);"></i> Cross-platform software engineering</li>
+                <li><i class="fas fa-tasks" style="color: var(--accent);"></i> Technical project coordination</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-laptop-code"></i> Technical Proficiencies</h2>
+            <div class="skills-container">
+                <span class="skill"><i class="fab fa-python"></i> Python</span>
+                <span class="skill"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="skill"><i class="fab fa-react"></i> React</span>
+                <span class="skill"><i class="fas fa-database"></i> SQL</span>
+                <span class="skill"><i class="fab fa-microsoft"></i> C#</span>
+                <span class="skill"><i class="fas fa-calculator"></i> MATLAB</span>
+                <span class="skill"><i class="fas fa-mobile"></i> Dart</span>
+                <span class="skill"><i class="fas fa-chart-pie"></i> Tableau</span>
+                <span class="skill"><i class="fas fa-chart-bar"></i> Power BI</span>
+                <span class="skill"><i class="fas fa-user-secret"></i> Penetration Testing</span>
+                <span class="skill"><i class="fas fa-cloud"></i> Cloud Security</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><i class="fas fa-project-diagram"></i> Featured Projects</h2>
+            
+            <div class="project">
+                <h3><i class="fas fa-chart-line" style="color: var(--accent);"></i> DataViz Dashboard</h3>
+                <p>An interactive analytics platform that processes large datasets and presents key metrics through customizable visualizations. Built with Python, React, and D3.js, this tool helps organizations make data-driven decisions.</p>
+            </div>
+            
+            <div class="project">
+                <h3><i class="fas fa-fingerprint" style="color: var(--primary);"></i> SecureAuth API</h3>
+                <p>A multi-factor authentication system developed with Node.js and C# that implements biometric verification and behavioral analysis to prevent unauthorized access to sensitive systems.</p>
+            </div>
+            
+            <div class="project">
+                <h3><i class="fas fa-graduation-cap" style="color: var(--accent2);"></i> EduTech Mobile App</h3>
+                <p>Cross-platform educational application created with Flutter that provides personalized learning experiences through adaptive algorithms and interactive content delivery.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
+            <p>Available for collaborations and opportunities.</p>
+            
+            <div class="contact-icons">
+                <a href="mailto:takurahove1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/takura-hove-205112364/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/mdharaDziva" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="tel:+263777230144" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                <a href="https://wa.me/263777230144" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2025 Takura M Hove. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Load particle.js library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // Initialize particles.js
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#6C63FF"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#6C63FF",
+                        "opacity": 0.3,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 400,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 100,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+    </script>
+</body>
+</html>
